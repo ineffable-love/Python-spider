@@ -1,0 +1,8 @@
+response = requests.post(url,headers=headers,data=data)
+response.encoding = 'utf-8'
+#print(response.text)
+dict_html = json.loads(response.text)
+print('翻译的结果为:')
+print(dict_html['translateResult'][0][0]['tgt'])
+
+(ps:需要User-Agent&header 否则会被网站服务器发现你是一只可爱的spider)
